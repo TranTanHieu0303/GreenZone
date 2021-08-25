@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.GroupActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        app:menu="@menu/menu_chat"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/group_rcv_noidungchat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/group_layout_chat"
+        android:layout_below="@id/toolbar_group"
+        />
+    <LinearLayout
+        android:id="@+id/group_layout_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/group_edt_textmess"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="7"
+            android:paddingLeft="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/stype_edt_bo4goc"
+
+            />
+        <Button
+            android:id="@+id/group_btn_goi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/ic_send_24"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_marginTop="10dp">
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="20dp">
+        <ImageView
+            android:id="@+id/layoutitemnhan_img_avatar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@color/black"/>
+    </androidx.cardview.widget.CardView>
+<TextView
+    android:id="@+id/layoutitemchat_tv_textnhan"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:textSize="20dp"
+    android:padding="10dp"
+    android:maxWidth="300dp"
+    android:background="@drawable/stype_edt_bo4goc"
+    />
+</LinearLayout>

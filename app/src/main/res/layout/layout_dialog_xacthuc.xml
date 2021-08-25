@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/stype_edt_bo4goc"
+    android:padding="10dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dl_xacthuc_tieude"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:padding="5dp">
+        <EditText
+            android:id="@+id/dl_xacthuc_edt_code"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="10"
+            android:background="@drawable/stype_edt_bo4goc"
+            android:textSize="25dp"
+            android:hint="OTP code "
+            android:paddingLeft="10dp"
+
+            />
+        <TextView
+            android:id="@+id/dl_xacthuc_tv_time"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="60"
+            android:textSize="25dp"
+            android:gravity="center"
+            android:background="@drawable/btn_dangky"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+        <Button
+            android:id="@+id/dl_xacthuc_btn_goilaima"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Gởi lại mã"
+            android:textStyle="bold"
+            android:background="@drawable/btn_dangky"
+            />
+        <Button
+            android:id="@+id/dl_xacthuc_btn_XacNhan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Xác Nhận"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:background="@drawable/stype_btn_dangnhap"
+            />
+        <Button
+            android:id="@+id/dl_xacthuc_btn_dong"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Đóng"
+            android:background="@drawable/btn_dangky"
+            />
+    </LinearLayout>
+</LinearLayout>

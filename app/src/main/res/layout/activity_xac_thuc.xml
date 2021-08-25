@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.XacThucActivity"
+    android:orientation="vertical"
+
+    >
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/xucthuc_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#10e062"
+        app:title="@string/title_dangky"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_xacthuc_tieude"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:padding="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:padding="10dp">
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/xacthuc_ccp_code"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/stype_boleft"
+                app:ccp_defaultNameCode="VN"
+                android:gravity="center"/>
+
+            <EditText
+                android:id="@+id/xacthuc_edt_sdt"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="8"
+                android:background="@drawable/stype_edt_sdt"
+                android:hint="Số Điện Thoại"
+                android:padding="10dp"
+                android:inputType="phone"
+                android:maxLines="1"
+                android:textSize="20dp" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/xacthuc_btn_goima"
+            android:layout_marginTop="20dp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="@string/xacthuc_btn_goima"
+            android:background="@drawable/btn_dangky"
+
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

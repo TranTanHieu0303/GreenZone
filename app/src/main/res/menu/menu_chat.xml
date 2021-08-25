@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/mnchat_call_phone"
+        android:icon="@drawable/ic_phone_call"
+        android:title="Gọi điện"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/mnchat_call_video"
+        android:icon="@drawable/ic_video_player"
+        android:title="Gọi video"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/mnchat_navigation"
+        android:icon="@drawable/list"
+        android:title="Tùy chọn"
+        app:showAsAction="always"
+        />
+</menu>

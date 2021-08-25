@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "526068222639",
+    "firebase_url": "https://greenzone-7a445-default-rtdb.firebaseio.com",
+    "project_id": "greenzone-7a445",
+    "storage_bucket": "greenzone-7a445.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526068222639:android:fb2127c2ea58279974a25a",
+        "android_client_info": {
+          "package_name": "com.example.greenzone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "526068222639-srstc7uj7534er18u6iphoina6imetcg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAD_QyZFp--afCD7MoJJ3mhJTlrteJiu_o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "526068222639-srstc7uj7534er18u6iphoina6imetcg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

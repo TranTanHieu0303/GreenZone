@@ -1,0 +1,2 @@
+rootProject.name = "GreenZone"
+include ':app'

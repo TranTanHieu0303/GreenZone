@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/mnhome_home"
+        android:icon="@drawable/home_selector"
+        android:title="@string/mnhome_bangtin"
+        />
+    <item
+    android:id="@+id/mnhome_chat"
+    android:icon="@drawable/chat_selector"
+    android:title="@string/mnhome_chat"
+    />
+    <item
+        android:id="@+id/mnhome_danhba"
+        android:icon="@drawable/phonebook_selector"
+        android:title="@string/mnhome_danhba"
+        />
+    <item
+        android:id="@+id/mnhome_thongbao"
+        android:icon="@drawable/notication_selector"
+        android:title="@string/mnhome_thongbao"
+        />
+    <item
+        android:id="@+id/mnhome_taiKhoan"
+        android:icon="@drawable/account_selector"
+        android:title="@string/mnhome_taikhoan"
+        />
+</menu>

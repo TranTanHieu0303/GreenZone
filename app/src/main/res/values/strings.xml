@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">GreenZone</string>
+    <string name="mnhome_home">Bảng Tin</string>
+    <string name="mnhome_chat">Tin Nhắn</string>
+    <string name="mnhome_danhba">Danh Bạ</string>
+    <string name="mnhome_bangtin">Bảng Tin</string>
+    <string name="mnhome_thongbao">Thông Báo</string>
+    <string name="mnhome_taikhoan">Tài Khoản</string>
+    <string name="tv_xacthuc_tieude">Đăng ký tài khoản với số điện thoại</string>
+    <string name="xacthuc_btn_goima">Gởi mã xác thực</string>
+    <string name="dl_xacthuc_tieude">Nhập mã xác thực OTP</string>
+    <string name="dangky_edt_sdt">Số điện thoại</string>
+    <string name="dangky_edt_ho">Họ và tên đệm</string>
+    <string name="dangky_tv_tieude">Thông tin tài khoản</string>
+    <string name="dangky_edt_ten">Tên</string>
+    <string name="dangky_edt_matkhau">Mật khẩu</string>
+    <string name="dangky_edt_nhaplaimk">Nhập lại mật khẩu</string>
+    <string name="title_dangky">Tạo tài khoản</string>
+    <string name="home_edt_trangthai">Hôm nay bạn thế nào?</string>
+</resources>

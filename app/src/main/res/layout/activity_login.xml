@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.LoginActivity"
+    android:orientation="vertical"
+    android:background="#fcfdff"
+    android:padding="10dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:src="@drawable/logo_text1" />
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/edt_Sdt"
+            android:background="@drawable/stype_edt_bo4goc"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:hint="Số điện thoại"
+            android:paddingLeft="5dp"
+            android:inputType="phone"
+            android:maxLines="1"
+            android:drawableLeft="@drawable/ic_phone"
+            android:drawablePadding="10dp"
+            />
+    </LinearLayout>
+    <EditText
+        android:id="@+id/edt_MatKhau"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/stype_edt_bo4goc"
+        android:hint="Mật khẩu"
+        android:paddingLeft="5dp"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:drawableLeft="@drawable/ic_pass"
+        android:drawablePadding="10dp"
+        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:padding="5dp">
+            <Button
+                android:id="@+id/btn_DangNhap"
+
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Đăng Nhập"
+                android:textSize="30dp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:background="@drawable/stype_btn_dangnhap"/>
+            <Button
+                android:id="@+id/btn_DangKy"
+                android:layout_marginTop="10dp"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Đăng Kí"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:background="@drawable/btn_dangky"/>
+        </LinearLayout>
+
+
+</LinearLayout>
