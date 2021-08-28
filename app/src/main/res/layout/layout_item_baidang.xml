@@ -6,50 +6,50 @@
     android:orientation="vertical"
     android:layout_marginTop="5dp">
     <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    >
-        <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="30dp"
-        android:layout_margin="10dp">
+        android:orientation="horizontal"
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="30dp"
+            android:layout_margin="10dp">
             <ImageView
-            android:id="@+id/it_baidang_img_avatar"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@color/black"
+                android:id="@+id/it_baidang_img_avatar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/black"
                 />
         </androidx.cardview.widget.CardView>
         <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/it_baidang_tv_tentk"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Trần Tấn Hiếu"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:layout_marginTop="10dp"
-            />
-        <TextView
-            android:id="@+id/it_baidang_tv_thoigian"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="21/08/2000 lúc 20:23"
-            android:textStyle="bold"
-            android:textSize="10dp"
-            />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/it_baidang_tv_tentk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Trần Tấn Hiếu"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:id="@+id/it_baidang_tv_thoigian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="21/08/2000 lúc 20:23"
+                android:textStyle="bold"
+                android:textSize="10dp"
+                />
         </LinearLayout>
     </LinearLayout>
     <TextView
         android:id="@+id/it_baidang_tv_noidung"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nội dung bài đăng được hiển thị ở đây"
+        android:text="Nội dung bài đăng được hiển thị ở đây Nội dung bài đăng được hiển thị ở đây"
         android:padding="10dp"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/it_baidang_rcv_hinhanh"
@@ -72,7 +72,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="100 bình luận , 20 lượt chi sẽ"
+            android:text="100 bình luận , 20 lượt chia sẽ"
             android:paddingLeft="10dp"
             android:drawablePadding="5dp"
             android:textAlignment="textEnd"

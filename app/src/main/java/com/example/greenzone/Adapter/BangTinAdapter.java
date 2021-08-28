@@ -31,7 +31,6 @@ public class BangTinAdapter extends RecyclerView.Adapter<BangTinAdapter.ViewHode
     @Override
     public ViewHoder1 onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.layout_item_baidang,null);
-
         return new ViewHoder1(view);
     }
 
@@ -54,15 +53,15 @@ public class BangTinAdapter extends RecyclerView.Adapter<BangTinAdapter.ViewHode
         public ViewHoder1(@NonNull @NotNull View itemView) {
             super(itemView);
             img_avatar =itemView.findViewById(R.id.it_baidang_img_avatar);
-            rcv_hinhanh =itemView.findViewById(R.id.it_baidang_rcv_hinhanh);
+            //rcv_hinhanh =itemView.findViewById(R.id.it_baidang_rcv_hinhanh);
             tv_tentk =itemView.findViewById(R.id.it_baidang_tv_tentk);
             tv_thoigian =itemView.findViewById(R.id.it_baidang_tv_thoigian);
-            tv_noidung =itemView.findViewById(R.id.it_baidang_tv_noidung);
-            tv_luotlike =itemView.findViewById(R.id.it_baidang_tv_luotlike);
-            tv_luotcmt_share =itemView.findViewById(R.id.it_baidang_tv_luotcmt_share);
-            tv_like =itemView.findViewById(R.id.it_baidang_tv_like);
-            tv_cmt =itemView.findViewById(R.id.it_baidang_tv_cmt);
-            tv_share =itemView.findViewById(R.id.it_baidang_tv_share);
+            ///tv_noidung =itemView.findViewById(R.id.it_baidang_tv_noidung);
+            //tv_luotlike =itemView.findViewById(R.id.it_baidang_tv_luotlike);
+            //tv_luotcmt_share =itemView.findViewById(R.id.it_baidang_tv_luotcmt_share);
+            //tv_like =itemView.findViewById(R.id.it_baidang_tv_like);
+            //tv_cmt =itemView.findViewById(R.id.it_baidang_tv_cmt);
+           // tv_share =itemView.findViewById(R.id.it_baidang_tv_share);
 
         }
     }

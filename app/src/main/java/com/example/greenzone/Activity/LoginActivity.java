@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.greenzone.Class.Group;
 import com.example.greenzone.Class.User;
+import com.example.greenzone.Object.GenAccessToken;
 import com.example.greenzone.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -47,7 +48,6 @@ public class LoginActivity extends AppCompatActivity {
         edt_matkhau = findViewById(R.id.edt_MatKhau);
         btn_DangNhap = findViewById(R.id.btn_DangNhap);
         btn_DangKy = findViewById(R.id.btn_DangKy);
-
         if(getIntent()!=null)
         {
             edt_sdt.setText(getIntent().getStringExtra("dangky_sdt"));
@@ -76,6 +76,7 @@ public class LoginActivity extends AppCompatActivity {
                 User user = new User();
                 user.setSDT((String) snapshot.child("sdt").getValue());
                 user.setPassword((String) snapshot.child("password").getValue());
+                user.setToken((String) snapshot.child("token").getValue());
                 if(user.getSDT()==null)
                 {
                     Toast.makeText(LoginActivity.this,"Tài khoản không tồn tại",Toast.LENGTH_SHORT).show();

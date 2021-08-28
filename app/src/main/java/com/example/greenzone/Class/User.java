@@ -3,7 +3,7 @@ package com.example.greenzone.Class;
 import java.io.Serializable;
 
 public class User implements Serializable {
-    String idUser,Ho,Ten,SDT,Email,Password,HinhAnh,GioiTinh,NgaySinh;
+    String idUser,Ho,Ten,SDT,Email,Password,HinhAnh,GioiTinh,NgaySinh,token;
 
     public User() {
     }
@@ -90,5 +90,14 @@ public class User implements Serializable {
 
     public void setNgaySinh(String ngaySinh) {
         NgaySinh = ngaySinh;
+    }
+
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

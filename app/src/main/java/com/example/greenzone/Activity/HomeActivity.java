@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.example.greenzone.Adapter.GroupAdapter;
 import com.example.greenzone.Class.Group;
@@ -28,6 +29,7 @@ import com.example.greenzone.Fragment.FragmentBookphone;
 import com.example.greenzone.Fragment.FragmentChat;
 import com.example.greenzone.Fragment.FragmentHome;
 import com.example.greenzone.Fragment.FragmentNotification;
+import com.example.greenzone.Object.GenAccessToken;
 import com.example.greenzone.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -38,8 +40,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.stringee.StringeeClient;
+import com.stringee.call.StringeeCall;
+import com.stringee.call.StringeeCall2;
+import com.stringee.exception.StringeeError;
+import com.stringee.listener.StringeeConnectionListener;
 
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -48,7 +56,10 @@ public class HomeActivity extends AppCompatActivity {
     BottomNavigationView bnv_home;
     FrameLayout layoutfrag;
     Fragment fragmentchon;
+    GenAccessToken genAccessToken = new GenAccessToken();
     Toolbar toolbar;
+    String token ;
+    static StringeeClient stringeeClient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +68,7 @@ public class HomeActivity extends AppCompatActivity {
         bnv_home = findViewById(R.id.home_bnv_menu);
         bnv_home.setItemIconTintList(null);
         layoutfrag  = findViewById(R.id.home_layout_chinh);
-
+        ketnoistring();
         fragmentchon = new FragmentHome();
         Loadlayout(fragmentchon);
         bnv_home.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -92,6 +103,63 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void ketnoistring() {
+        token = user.getToken();
+        stringeeClient = new StringeeClient(HomeActivity.this);
+        stringeeClient.setConnectionListener(new StringeeConnectionListener() {
+            @Override
+            public void onConnectionConnected(StringeeClient stringeeClient, boolean b) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(HomeActivity.this, "Kết nối thành công",Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onConnectionDisconnected(StringeeClient stringeeClient, boolean b) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(HomeActivity.this,"không kết nối được",Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onIncomingCall(StringeeCall stringeeCall) {
+
+            }
+
+            @Override
+            public void onIncomingCall2(StringeeCall2 stringeeCall2) {
+
+            }
+
+            @Override
+            public void onConnectionError(StringeeClient stringeeClient, StringeeError stringeeError) {
+
+            }
+
+            @Override
+            public void onRequestNewToken(StringeeClient stringeeClient) {
+
+            }
+
+            @Override
+            public void onCustomMessage(String s, JSONObject jsonObject) {
+
+            }
+
+            @Override
+            public void onTopicMessage(String s, JSONObject jsonObject) {
+
+            }
+        });
+        stringeeClient.connect(token);
     }
 
     private void Loadlayout(Fragment fragmentchon) {

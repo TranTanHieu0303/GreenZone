@@ -3,19 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/mnchat_call_phone"
-        android:icon="@drawable/ic_phone_call"
+        android:icon="@drawable/ic_call_24"
         android:title="Gọi điện"
         app:showAsAction="always"
         />
     <item
         android:id="@+id/mnchat_call_video"
-        android:icon="@drawable/ic_video_player"
+        android:icon="@drawable/ic_videocam_24"
         android:title="Gọi video"
         app:showAsAction="always"
         />
     <item
         android:id="@+id/mnchat_navigation"
-        android:icon="@drawable/list"
+        android:icon="@drawable/ic_format_list_24"
         android:title="Tùy chọn"
         app:showAsAction="always"
         />
