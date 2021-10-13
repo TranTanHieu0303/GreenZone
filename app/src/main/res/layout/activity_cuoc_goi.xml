@@ -37,6 +37,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
+            android:id="@+id/CuocGoi_btn_ketthuc"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:text="end"

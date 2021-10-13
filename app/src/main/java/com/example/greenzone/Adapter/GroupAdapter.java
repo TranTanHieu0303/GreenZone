@@ -27,13 +27,12 @@ public class GroupAdapter  extends RecyclerView.Adapter<GroupAdapter.KHUNGNHIN> 
     ArrayList<Group> groups;
     Context context;
     User user;
-
+    ArrayList<User> userArrayList;
     public GroupAdapter(ArrayList<Group> groups, Context context,User user) {
         this.groups = groups;
         this.context = context;
         this.user = user;
     }
-
     @NonNull
     @NotNull
     @Override
@@ -55,7 +54,7 @@ public class GroupAdapter  extends RecyclerView.Adapter<GroupAdapter.KHUNGNHIN> 
             public void onClick(View v) {
                 Intent intent = new Intent(context, GroupActivity.class);
                 intent.putExtra("id_group", (Serializable) group);
-                intent.putExtra("id_user",user.getSDT());
+                intent.putExtra("id_user",user);
                 context.startActivity(intent);
             }
         });
@@ -67,7 +66,7 @@ public class GroupAdapter  extends RecyclerView.Adapter<GroupAdapter.KHUNGNHIN> 
     }
 
     public class KHUNGNHIN extends RecyclerView.ViewHolder{
-LinearLayout layout;
+    LinearLayout layout;
     ImageView img_avatar;
     TextView tv_name,tv_noidung;
     public KHUNGNHIN(@NonNull @NotNull View itemView) {
@@ -77,5 +76,17 @@ LinearLayout layout;
         tv_noidung = itemView.findViewById(R.id.itemgr_tv_noidung);
         layout = itemView.findViewById(R.id.layout_itemgroup);
     }
+
 }
+    /*public  class viewHoder2 extends RecyclerView.ViewHolder{
+        LinearLayout layuot;
+        ImageView img_hinh;
+        TextView tv_ten;
+        public viewHoder2(@NonNull View itemView) {
+            super(itemView);
+            layuot = itemView.findViewById(R.id.layuot_canhan);
+            img_hinh = itemView.findViewById(R.id.item_canhan_img_Hinhanh);
+            tv_ten = itemView.findViewById(R.id.item_canhan_tv_ten);
+        }
+    }*/
 }

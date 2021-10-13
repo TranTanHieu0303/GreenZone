@@ -37,18 +37,11 @@ public class FragmentBookphone extends Fragment {
     }
 
     private void Loaddanhsach() {
-        users.add(new User("1","Trần Tấn","Hiếu","","","","","",""));
-        users.add(new User("2","Dương Thanh","Công","","","","","",""));
-        users.add(new User("3","Hoàng Minh","Nhất.","","","","","",""));
-        users.add(new User("1","Trần Tấn","Hiếu","","","","","",""));
-        users.add(new User("2","Dương Thanh","Công","","","","","",""));
-        users.add(new User("3","Hoàng Minh","Nhất.","","","","","",""));
-        users.add(new User("1","Trần Tấn","Hiếu","","","","","",""));
-        users.add(new User("2","Dương Thanh","Công","","","","","",""));
-        users.add(new User("3","Hoàng Minh","Nhất.","","","","","",""));
-        users.add(new User("1","Trần Tấn","Hiếu","","","","","",""));
-        users.add(new User("2","Dương Thanh","Công","","","","","",""));
-        users.add(new User("3","Hoàng Minh","Nhất.","","","","","",""));
+        for (int i = 0 ; i<10; i ++)
+        {
+            users.add(new User(""+i,"Trần Tấn","Hiếu","","","","","","","","","",""));
+
+        }
         adapter = new PhonebookAdapter(users,getContext());
         rcv_phonebook.setAdapter(adapter);
     }

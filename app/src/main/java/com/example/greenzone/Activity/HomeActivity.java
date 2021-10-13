@@ -2,6 +2,7 @@ package com.example.greenzone.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -17,6 +18,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.Toast;
@@ -50,6 +52,8 @@ import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class HomeActivity extends AppCompatActivity {
     User user;
@@ -59,15 +63,21 @@ public class HomeActivity extends AppCompatActivity {
     GenAccessToken genAccessToken = new GenAccessToken();
     Toolbar toolbar;
     String token ;
+    ActionBar actionBar;
     static StringeeClient stringeeClient;
+    public static Map<String, StringeeCall> callMap = new HashMap<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         user = (User) getIntent().getSerializableExtra("user");
+        token = user.getToken();
         bnv_home = findViewById(R.id.home_bnv_menu);
         bnv_home.setItemIconTintList(null);
         layoutfrag  = findViewById(R.id.home_layout_chinh);
+        toolbar = findViewById(R.id.home_toolbar);
+        setSupportActionBar(toolbar);
+        actionBar = getSupportActionBar();
         ketnoistring();
         fragmentchon = new FragmentHome();
         Loadlayout(fragmentchon);
@@ -79,22 +89,27 @@ public class HomeActivity extends AppCompatActivity {
                 {
                     case R.id.mnhome_home: {
                         fragmentchon = new FragmentHome();
+                        toolbar.setTitle("Trang Chủ");
                         break;
                     }
-                    case R.id.mnhome_chat: {
+                    case R.id.mnhome_Group: {
                         fragmentchon = new FragmentChat(user);
+                        toolbar.setTitle("Nhóm");
                         break;
                     }
-                    case R.id.mnhome_danhba: {
+                    case R.id.mnhome_pageaccout: {
                         fragmentchon = new FragmentBookphone();
+                        toolbar.setTitle("Trang Chủ");
                         break;
                     }
                     case R.id.mnhome_thongbao: {
                         fragmentchon = new FragmentNotification();
+                        toolbar.setTitle("Thông báo");
                         break;
                     }
-                    case R.id.mnhome_taiKhoan: {
+                    case R.id.mnhome_menu: {
                         fragmentchon = new FragmentAccount();
+                        toolbar.setTitle("Menu");
                         break;
                     }
                 }
@@ -103,10 +118,16 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_home, menu);
+        return true;
     }
 
     private void ketnoistring() {
-        token = user.getToken();
         stringeeClient = new StringeeClient(HomeActivity.this);
         stringeeClient.setConnectionListener(new StringeeConnectionListener() {
             @Override
@@ -114,7 +135,7 @@ public class HomeActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(HomeActivity.this, "Kết nối thành công",Toast.LENGTH_LONG).show();
+                        Toast.makeText(HomeActivity.this,stringeeClient.getUserId(),Toast.LENGTH_LONG).show();
                     }
                 });
             }
@@ -131,7 +152,15 @@ public class HomeActivity extends AppCompatActivity {
 
             @Override
             public void onIncomingCall(StringeeCall stringeeCall) {
-
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        callMap.put(stringeeCall.getCallId(),stringeeCall);
+                        Intent intent = new Intent(HomeActivity.this,NhanCuocGoiActivity.class);
+                        intent.putExtra("call_id", stringeeCall.getCallId());
+                        startActivity(intent);
+                    }
+                });
             }
 
             @Override
@@ -168,4 +197,17 @@ public class HomeActivity extends AppCompatActivity {
         transaction.commit();
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.mn_home_chat: {
+                Intent intent = new Intent(HomeActivity.this,ChatActivity.class);
+                intent.putExtra("user",user);
+                startActivity(intent);
+                this.finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

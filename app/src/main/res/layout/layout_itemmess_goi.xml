@@ -13,4 +13,11 @@
     android:maxWidth="300dp"
     android:background="@drawable/stype_edt_bo4goc"
     />
+
+    <TextView
+        android:id="@+id/layoutitemchat_tv_tg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/layoutitemchat_tv_text"
+        />
 </RelativeLayout>

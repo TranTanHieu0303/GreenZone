@@ -4,19 +4,47 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:gravity="center">
-<androidx.cardview.widget.CardView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:cardCornerRadius="30dp"
-    android:layout_margin="5dp">
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@color/black"
-        />
-</androidx.cardview.widget.CardView>
+    android:gravity="center"
+    android:id="@+id/layuot_canhan"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/item_canhan_img_Hinhanh"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/black" />
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardCornerRadius="10dp"
+            >
+<TextView
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#11d41e"/>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <TextView
+        android:id="@+id/item_canhan_tv_ten"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ten"/>

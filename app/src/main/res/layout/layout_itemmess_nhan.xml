@@ -26,4 +26,9 @@
     android:maxWidth="300dp"
     android:background="@drawable/stype_edt_bo4goc"
     />
+    <TextView
+        android:id="@+id/layoutchat_tv_thg_nhan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
 </LinearLayout>

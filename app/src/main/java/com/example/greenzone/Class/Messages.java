@@ -21,7 +21,6 @@ public class Messages {
         this.time = time;
         Usercreate = usercreate;
     }
-
     public String getIdMes() {
         return idMes;
     }

@@ -30,8 +30,12 @@ import com.hbb20.CountryCodePicker;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.time.LocalDateTime;
 import java.util.Date;
+
+import javax.xml.bind.DatatypeConverter;
 
 public class LoginActivity extends AppCompatActivity {
     Button btn_DangNhap,btn_DangKy;
@@ -69,8 +73,30 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
     private void Kiemtrataikhoan(String sdt,String pass) {
-        DatabaseReference datataikhoan = FirebaseDatabase.getInstance().getReference().child("Users").child(sdt);
-        datataikhoan.addListenerForSingleValueEvent(new ValueEventListener() {
+        DatabaseReference datataikhoan = FirebaseDatabase.getInstance().getReference().child("Users");
+        datataikhoan.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot item: snapshot.getChildren()) {
+                    User user = new User();
+                    user.setSDT((String) item.child("sdt").getValue());
+                    user.setPassword((String) item.child("password").getValue());
+                    user.setToken("eyJjdHkiOiJzdHJpbmdlZS1hcGk7dj0xIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJpc3MiOiIwOTgyMzI4MTY0IiwicmVzdF9hcGkiOnRydWUsImV4cCI6MTYzMDE2MzgwNywianRpIjoiU0t5OWZTejRSRFp4NlVEOXFWVldDb0h5UVdKemhubTdJLTE2MzAxMjA2MDc3MzYifQ.54vLz4H_S2GS3jPlmZdOLLC8TOCyse9K0HmF3QAW7Vs");
+                    if(sdt.equals(user.getSDT())&&checkPass(pass,user.getPassword()))
+                    {
+                        Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+                        intent.putExtra("user", user);
+                        startActivity(intent);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        /*datataikhoan.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                 User user = new User();
@@ -97,6 +123,22 @@ public class LoginActivity extends AppCompatActivity {
             public void onCancelled(@NonNull @NotNull DatabaseError error) {
 
             }
-        });
+        });*/
+    }
+    public boolean checkPass(String input,String checkpass)
+    {
+        MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        md.update(input.getBytes());
+        byte[] digest = md.digest();
+        String passhash =  DatatypeConverter
+                .printHexBinary(digest).toUpperCase();
+        if(passhash.equals(checkpass))
+            return true;
+        return false;
     }
 }

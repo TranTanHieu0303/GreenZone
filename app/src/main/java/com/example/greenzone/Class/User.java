@@ -3,12 +3,12 @@ package com.example.greenzone.Class;
 import java.io.Serializable;
 
 public class User implements Serializable {
-    String idUser,Ho,Ten,SDT,Email,Password,HinhAnh,GioiTinh,NgaySinh,token;
+    String idUser,Ho,Ten,SDT,Email,Password,HinhAnh,GioiTinh,NgaySinh,token,TrangThai,QueQuan,AnhBia;
 
     public User() {
     }
 
-    public User(String idUser, String ho, String ten, String SDT, String email, String password, String hinhAnh, String gioiTinh, String ngaySinh) {
+    public User(String idUser, String ho, String ten, String SDT, String email, String password, String hinhAnh, String gioiTinh, String ngaySinh, String token, String trangThai, String queQuan, String anhBia) {
         this.idUser = idUser;
         Ho = ho;
         Ten = ten;
@@ -18,8 +18,11 @@ public class User implements Serializable {
         HinhAnh = hinhAnh;
         GioiTinh = gioiTinh;
         NgaySinh = ngaySinh;
+        this.token = token;
+        TrangThai = trangThai;
+        QueQuan = queQuan;
+        AnhBia = anhBia;
     }
-
     public String getIdUser() {
         return idUser;
     }
@@ -99,5 +102,29 @@ public class User implements Serializable {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public String getTrangThai() {
+        return TrangThai;
+    }
+
+    public void setTrangThai(String trangThai) {
+        TrangThai = trangThai;
+    }
+
+    public String getQueQuan() {
+        return QueQuan;
+    }
+
+    public void setQueQuan(String queQuan) {
+        QueQuan = queQuan;
+    }
+
+    public String getAnhBia() {
+        return AnhBia;
+    }
+
+    public void setAnhBia(String anhBia) {
+        AnhBia = anhBia;
     }
 }

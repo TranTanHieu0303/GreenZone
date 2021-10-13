@@ -8,14 +8,14 @@
         android:title="@string/mnhome_bangtin"
         />
     <item
-    android:id="@+id/mnhome_chat"
-    android:icon="@drawable/chat_selector"
-    android:title="@string/mnhome_chat"
+    android:id="@+id/mnhome_Group"
+    android:icon="@drawable/group_select"
+    android:title="@string/mnhome_group"
     />
     <item
-        android:id="@+id/mnhome_danhba"
-        android:icon="@drawable/phonebook_selector"
-        android:title="@string/mnhome_danhba"
+        android:id="@+id/mnhome_pageaccout"
+        android:icon="@drawable/account_selector"
+        android:title="@string/mnhome_pageaccout"
         />
     <item
         android:id="@+id/mnhome_thongbao"
@@ -23,8 +23,8 @@
         android:title="@string/mnhome_thongbao"
         />
     <item
-        android:id="@+id/mnhome_taiKhoan"
-        android:icon="@drawable/account_selector"
-        android:title="@string/mnhome_taikhoan"
+        android:id="@+id/mnhome_menu"
+        android:icon="@drawable/menu_select"
+        android:title="@string/mnhome_menu"
         />
 </menu>

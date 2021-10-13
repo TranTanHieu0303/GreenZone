@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mn_chat_chat"
+        android:icon="@drawable/chat_selector"
+        android:title="Tin Nhắn"
+        />
+    <item
+        android:id="@+id/mn_chat_BanBe"
+        android:icon="@drawable/banbe_select"
+        android:title="Bạn Bè"
+        />
+</menu>

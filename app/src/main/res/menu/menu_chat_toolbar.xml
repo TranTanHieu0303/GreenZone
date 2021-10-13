@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/mn_home_search"
+        android:id="@+id/mnchat_search"
         android:icon="@drawable/ic_search"
         android:title="Tìm Kiếm"
         app:showAsAction="always"
         />
     <item
-        android:id="@+id/mn_home_chat"
-        android:icon="@drawable/ic_chat"
-        android:title="Tin Nhắn"
+        android:id="@+id/mnchat_add"
+        android:icon="@drawable/ic_add"
+        android:title="thêm"
         app:showAsAction="always"
         />
 </menu>

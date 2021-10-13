@@ -17,4 +17,7 @@
     <string name="dangky_edt_nhaplaimk">Nhập lại mật khẩu</string>
     <string name="title_dangky">Tạo tài khoản</string>
     <string name="home_edt_trangthai">Hôm nay bạn thế nào?</string>
+    <string name="mnhome_group">Nhóm</string>
+    <string name="mnhome_pageaccout">Trang Cá Nhân</string>
+    <string name="mnhome_menu">Menu</string>
 </resources>

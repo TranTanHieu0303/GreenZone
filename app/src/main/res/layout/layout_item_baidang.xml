@@ -49,7 +49,7 @@
         android:id="@+id/it_baidang_tv_noidung"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nội dung bài đăng được hiển thị ở đây Nội dung bài đăng được hiển thị ở đây"
+        android:text="Nội dung bài đăng được hiển thị ở đây"
         android:padding="10dp"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/it_baidang_rcv_hinhanh"

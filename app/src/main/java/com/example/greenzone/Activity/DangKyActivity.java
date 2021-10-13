@@ -16,6 +16,11 @@ import com.example.greenzone.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
+import javax.xml.bind.DatatypeConverter;
+
 public class DangKyActivity extends AppCompatActivity {
     EditText edt_sdt,edt_ho,edt_ten,edt_matkhau,edt_xacnhanmk;
     Button btn_thoat,btn_dangky;
@@ -59,10 +64,24 @@ public class DangKyActivity extends AppCompatActivity {
         user.setSDT(edt_sdt.getText().toString().trim());
         user.setHo(edt_ho.getText().toString().trim());
         user.setTen(edt_ten.getText().toString().trim());
-        user.setPassword(edt_matkhau.getText().toString().trim());
-        FirebaseDatabase.getInstance().getReference().child("Users").child(user.getSDT()).setValue(user);
+        String password = edt_matkhau.getText().toString().trim();;
+        user.setPassword(mahoapass(password));
+        FirebaseDatabase.getInstance().getReference().child("Users").child(System.currentTimeMillis()+"").setValue(user);
     }
+    public String mahoapass(String password)
+    {
+        MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        md.update(password.getBytes());
+        byte[] digest = md.digest();
+        return DatatypeConverter
+                .printHexBinary(digest).toUpperCase();
 
+    }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
