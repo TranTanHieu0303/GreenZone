@@ -1,33 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".Activity.HomeActivity">
-<androidx.appcompat.widget.Toolbar
-    android:id="@+id/home_toolbar"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:title="GreenZone"
-    app:menu="@menu/menu_home"
-    />
-
-    <FrameLayout
-        android:id="@+id/home_layout_chinh"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/home_bnv_menu"
-        android:layout_below="@id/home_toolbar"
-    />
+        android:layout_height="match_parent">
+<!--        <com.google.android.material.appbar.AppBarLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/home_appbar"-->
+<!--            android:background="@color/white"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            >-->
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                app:layout_scrollFlags="scroll|enterAlways|snap">-->
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/home_bnv_menu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        app:menu="@menu/menu_chinh"
-        app:itemBackground="@color/white"
-        />
-</RelativeLayout>
+<!--                <androidx.appcompat.widget.Toolbar-->
+<!--                    android:id="@+id/home_toolbar"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:title="GreenZone"-->
+<!--                    android:background="@color/white"-->
+<!--                    app:layout_scrollFlags="scroll|enterAlways|snap"/>-->
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageView"-->
+<!--                    android:layout_width="24dp"-->
+<!--                    android:layout_height="24dp"-->
+<!--                    android:layout_marginStart="310dp"-->
+<!--                    android:layout_marginTop="16dp"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/home_toolbar"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:srcCompat="@drawable/ic_search" />-->
+
+<!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="8dp"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/imageView"-->
+<!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/home_img_chat"-->
+<!--                        android:layout_width="24dp"-->
+<!--                        android:layout_height="24dp"-->
+<!--                        android:layout_marginStart="8dp"-->
+<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toTopOf="parent"-->
+<!--                        app:srcCompat="@drawable/chat_selector" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/textViewSeletedCount"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="0dp"-->
+<!--                        android:background="@drawable/bg_count_chat"-->
+<!--                        android:gravity="center"-->
+<!--                        android:minWidth="13dp"-->
+<!--                        android:minHeight="13dp"-->
+<!--                        android:paddingLeft="2dp"-->
+<!--                        android:paddingRight="2dp"-->
+<!--                        android:text="9+"-->
+<!--                        android:textColor="@android:color/white"-->
+<!--                        android:textSize="8dp"-->
+<!--                        app:layout_constraintBottom_toTopOf="@id/home_img_chat"-->
+<!--                        app:layout_constraintDimensionRatio="H,1:1"-->
+<!--                        app:layout_constraintRight_toRightOf="@id/home_img_chat"-->
+<!--                        app:layout_constraintTop_toTopOf="@id/home_img_chat" />-->
+<!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--        </com.google.android.material.appbar.AppBarLayout>-->
+
+        <FrameLayout
+            android:id="@+id/home_layout_chinh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/home_bnv_menu"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+        <!--        android:id="@+id/home_bnv_menu"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_alignParentBottom="true"-->
+        <!--        app:itemBackground="@color/white"-->
+        <!--        app:menu="@menu/menu_chinh" />-->
+        <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+            android:id="@+id/home_bnv_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            app:mbn_backgroundBottomColor="#38cf47"
+            app:mbn_circleColor="#ffffff"
+            app:mbn_countBackgroundColor="@color/bg_count"
+            app:mbn_countTextColor="#ffffff"
+            app:mbn_defaultIconColor="#F6F6F6"
+            app:mbn_selectedIconColor="#04E1F8"
+            app:mbn_shadowColor="#2E2E2E" />
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

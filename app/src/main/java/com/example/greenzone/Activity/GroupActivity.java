@@ -83,7 +83,7 @@ public class GroupActivity extends AppCompatActivity {
                 String formatDateTime = now.format(format);
                 messages.setTime(formatDateTime);
                 messages.setIdGroup(id_group.getIdGroup());
-                messages.setUsercreate(id_user.getSDT());
+                messages.setUsercreate(id_user.getSdt());
                 FirebaseDatabase.getInstance().getReference().child("Messages").child(id_group.getIdGroup()).child(messages.getIdMes()).setValue(messages);
                 FirebaseDatabase.getInstance().getReference().child("Groups").child(id_group.getIdGroup()).child("idMesCuoi").setValue(messages.getText());
                 edt_textMes.setText(null);
@@ -183,7 +183,7 @@ public class GroupActivity extends AppCompatActivity {
                 mes.setText((String) snapshot.child("text").getValue());
                 mes.setTime((String) snapshot.child("time").getValue());
                 mes.setUsercreate((String) snapshot.child("usercreate").getValue());
-                if(mes.getUsercreate().equals(id_user.getSDT()))
+                if(mes.getUsercreate().equals(id_user.getSdt()))
                     mes.setIsuer(true);
                 else
                     mes.setIsuer(false);

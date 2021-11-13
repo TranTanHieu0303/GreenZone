@@ -3,26 +3,28 @@ package com.example.greenzone.Class;
 import java.io.Serializable;
 
 public class User implements Serializable {
-    String idUser,Ho,Ten,SDT,Email,Password,HinhAnh,GioiTinh,NgaySinh,token,TrangThai,QueQuan,AnhBia;
-
+    String idUser,fullName,sdt,email,password,hinhAnh,gioiTinh,queQuan,anhBia,ngaySinh,token;
+    Boolean isOnline;
+    Integer soBanBe;
     public User() {
     }
 
-    public User(String idUser, String ho, String ten, String SDT, String email, String password, String hinhAnh, String gioiTinh, String ngaySinh, String token, String trangThai, String queQuan, String anhBia) {
+    public User(String idUser, String fullName, String sdt, String email, String password, String hinhAnh, String gioiTinh, String queQuan, String anhBia, String ngaySinh, String token, Boolean isOnline, Integer soBanBe) {
         this.idUser = idUser;
-        Ho = ho;
-        Ten = ten;
-        this.SDT = SDT;
-        Email = email;
-        Password = password;
-        HinhAnh = hinhAnh;
-        GioiTinh = gioiTinh;
-        NgaySinh = ngaySinh;
+        this.fullName = fullName;
+        this.sdt = sdt;
+        this.email = email;
+        this.password = password;
+        this.hinhAnh = hinhAnh;
+        this.gioiTinh = gioiTinh;
+        this.queQuan = queQuan;
+        this.anhBia = anhBia;
+        this.ngaySinh = ngaySinh;
         this.token = token;
-        TrangThai = trangThai;
-        QueQuan = queQuan;
-        AnhBia = anhBia;
+        this.isOnline = isOnline;
+        this.soBanBe = soBanBe;
     }
+
     public String getIdUser() {
         return idUser;
     }
@@ -31,70 +33,77 @@ public class User implements Serializable {
         this.idUser = idUser;
     }
 
-    public String getHo() {
-        return Ho;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setHo(String ho) {
-        Ho = ho;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public String getTen() {
-        return Ten;
+    public String getSdt() {
+        return sdt;
     }
 
-    public void setTen(String ten) {
-        Ten = ten;
-    }
-
-    public String getSDT() {
-        return SDT;
-    }
-
-    public void setSDT(String SDT) {
-        this.SDT = SDT;
+    public void setSdt(String sdt) {
+        this.sdt = sdt;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
     public String getHinhAnh() {
-        return HinhAnh;
+        return hinhAnh;
     }
 
     public void setHinhAnh(String hinhAnh) {
-        HinhAnh = hinhAnh;
+        this.hinhAnh = hinhAnh;
     }
 
     public String getGioiTinh() {
-        return GioiTinh;
+        return gioiTinh;
     }
 
     public void setGioiTinh(String gioiTinh) {
-        GioiTinh = gioiTinh;
+        this.gioiTinh = gioiTinh;
+    }
+
+    public String getQueQuan() {
+        return queQuan;
+    }
+
+    public void setQueQuan(String queQuan) {
+        this.queQuan = queQuan;
+    }
+
+    public String getAnhBia() {
+        return anhBia;
+    }
+
+    public void setAnhBia(String anhBia) {
+        this.anhBia = anhBia;
     }
 
     public String getNgaySinh() {
-        return NgaySinh;
+        return ngaySinh;
     }
 
     public void setNgaySinh(String ngaySinh) {
-        NgaySinh = ngaySinh;
+        this.ngaySinh = ngaySinh;
     }
-
 
     public String getToken() {
         return token;
@@ -104,27 +113,19 @@ public class User implements Serializable {
         this.token = token;
     }
 
-    public String getTrangThai() {
-        return TrangThai;
+    public Boolean getOnline() {
+        return isOnline;
     }
 
-    public void setTrangThai(String trangThai) {
-        TrangThai = trangThai;
+    public void setOnline(Boolean online) {
+        isOnline = online;
     }
 
-    public String getQueQuan() {
-        return QueQuan;
+    public Integer getSoBanBe() {
+        return soBanBe;
     }
 
-    public void setQueQuan(String queQuan) {
-        QueQuan = queQuan;
-    }
-
-    public String getAnhBia() {
-        return AnhBia;
-    }
-
-    public void setAnhBia(String anhBia) {
-        AnhBia = anhBia;
+    public void setSoBanBe(Integer soBanBe) {
+        this.soBanBe = soBanBe;
     }
 }

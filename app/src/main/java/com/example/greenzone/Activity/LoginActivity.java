@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.greenzone.API.APIservice;
 import com.example.greenzone.Class.Group;
 import com.example.greenzone.Class.User;
 import com.example.greenzone.Object.GenAccessToken;
@@ -36,6 +37,10 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.xml.bind.DatatypeConverter;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
     Button btn_DangNhap,btn_DangKy;
@@ -67,78 +72,103 @@ public class LoginActivity extends AppCompatActivity {
         btn_DangNhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Kiemtrataikhoan(edt_sdt.getText().toString(),edt_matkhau.getText().toString());
-
+//                Kiemtrataikhoan(edt_sdt.getText().toString(),edt_matkhau.getText().toString());
+                Login(edt_sdt.getText().toString(),edt_matkhau.getText().toString());
             }
         });
     }
-    private void Kiemtrataikhoan(String sdt,String pass) {
-        DatabaseReference datataikhoan = FirebaseDatabase.getInstance().getReference().child("Users");
-        datataikhoan.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot item: snapshot.getChildren()) {
-                    User user = new User();
-                    user.setSDT((String) item.child("sdt").getValue());
-                    user.setPassword((String) item.child("password").getValue());
-                    user.setToken("eyJjdHkiOiJzdHJpbmdlZS1hcGk7dj0xIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJpc3MiOiIwOTgyMzI4MTY0IiwicmVzdF9hcGkiOnRydWUsImV4cCI6MTYzMDE2MzgwNywianRpIjoiU0t5OWZTejRSRFp4NlVEOXFWVldDb0h5UVdKemhubTdJLTE2MzAxMjA2MDc3MzYifQ.54vLz4H_S2GS3jPlmZdOLLC8TOCyse9K0HmF3QAW7Vs");
-                    if(sdt.equals(user.getSDT())&&checkPass(pass,user.getPassword()))
-                    {
-                        Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
-                        intent.putExtra("user", user);
-                        startActivity(intent);
-                    }
-                }
-            }
 
+    private void Login(String sdt, String pass) {
+        APIservice.apiService.getLogin(sdt,pass).enqueue(new Callback<User>() {
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-        /*datataikhoan.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
-                User user = new User();
-                user.setSDT((String) snapshot.child("sdt").getValue());
-                user.setPassword((String) snapshot.child("password").getValue());
-                user.setToken((String) snapshot.child("token").getValue());
-                if(user.getSDT()==null)
-                {
-                    Toast.makeText(LoginActivity.this,"Tài khoản không tồn tại",Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if(user.getSDT().equals(sdt)&&user.getPassword().equals(pass))
+            public void onResponse(Call<User> call, Response<User> response) {
+                Toast.makeText(LoginActivity.this,"Call api thanh cong",Toast.LENGTH_SHORT).show();
+                User user = response.body();
+                if(user!=null)
                 {
                     Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
                     intent.putExtra("user", user);
                     startActivity(intent);
-                }
-                else
+                }else
                 {
-                    Toast.makeText(LoginActivity.this,"Thông tin không chính xác",Toast.LENGTH_SHORT);
+                    Toast.makeText(LoginActivity.this,"Gan user that bai",Toast.LENGTH_SHORT).show();
                 }
             }
-            @Override
-            public void onCancelled(@NonNull @NotNull DatabaseError error) {
 
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                Toast.makeText(LoginActivity.this,"Call api fail",Toast.LENGTH_SHORT).show();
             }
-        });*/
+        });
+
     }
-    public boolean checkPass(String input,String checkpass)
-    {
-        MessageDigest md = null;
-        try {
-            md = MessageDigest.getInstance("MD5");
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        md.update(input.getBytes());
-        byte[] digest = md.digest();
-        String passhash =  DatatypeConverter
-                .printHexBinary(digest).toUpperCase();
-        if(passhash.equals(checkpass))
-            return true;
-        return false;
-    }
+//    private void Kiemtrataikhoan(String sdt,String pass) {
+//        DatabaseReference datataikhoan = FirebaseDatabase.getInstance().getReference().child("Users");
+//        datataikhoan.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                for (DataSnapshot item: snapshot.getChildren()) {
+//                    User user = new User();
+//                    user.setSDT((String) item.child("sdt").getValue());
+//                    user.setPassword((String) item.child("password").getValue());
+//                    user.setToken("eyJjdHkiOiJzdHJpbmdlZS1hcGk7dj0xIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJpc3MiOiIwOTgyMzI4MTY0IiwicmVzdF9hcGkiOnRydWUsImV4cCI6MTYzMDE2MzgwNywianRpIjoiU0t5OWZTejRSRFp4NlVEOXFWVldDb0h5UVdKemhubTdJLTE2MzAxMjA2MDc3MzYifQ.54vLz4H_S2GS3jPlmZdOLLC8TOCyse9K0HmF3QAW7Vs");
+//                    if(sdt.equals(user.getSDT())&&checkPass(pass,user.getPassword()))
+//                    {
+//                        Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+//                        intent.putExtra("user", user);
+//                        startActivity(intent);
+//                    }
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
+//        /*datataikhoan.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+//                User user = new User();
+//                user.setSDT((String) snapshot.child("sdt").getValue());
+//                user.setPassword((String) snapshot.child("password").getValue());
+//                user.setToken((String) snapshot.child("token").getValue());
+//                if(user.getSDT()==null)
+//                {
+//                    Toast.makeText(LoginActivity.this,"Tài khoản không tồn tại",Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//                if(user.getSDT().equals(sdt)&&user.getPassword().equals(pass))
+//                {
+//                    Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+//                    intent.putExtra("user", user);
+//                    startActivity(intent);
+//                }
+//                else
+//                {
+//                    Toast.makeText(LoginActivity.this,"Thông tin không chính xác",Toast.LENGTH_SHORT);
+//                }
+//            }
+//            @Override
+//            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+//
+//            }
+//        });*/
+//    }
+//    public boolean checkPass(String input,String checkpass)
+//    {
+//        MessageDigest md = null;
+//        try {
+//            md = MessageDigest.getInstance("MD5");
+//        } catch (NoSuchAlgorithmException e) {
+//            e.printStackTrace();
+//        }
+//        md.update(input.getBytes());
+//        byte[] digest = md.digest();
+//        String passhash =  DatatypeConverter
+//                .printHexBinary(digest).toUpperCase();
+//        if(passhash.equals(checkpass))
+//            return true;
+//        return false;
+//    }
 }

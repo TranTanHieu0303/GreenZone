@@ -39,7 +39,7 @@ public class FragmentBookphone extends Fragment {
     private void Loaddanhsach() {
         for (int i = 0 ; i<10; i ++)
         {
-            users.add(new User(""+i,"Trần Tấn","Hiếu","","","","","","","","","",""));
+            users.add(new User(""+i,"Trần Tấn","Hiếu","","","","","","","","",true,0));
 
         }
         adapter = new PhonebookAdapter(users,getContext());

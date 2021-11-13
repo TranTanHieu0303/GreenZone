@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.DangTinActivity"
+    android:padding="5dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/dangtin_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="Tạo bài viết"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/dangtin_img_avatar"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                app:civ_border_color="@color/black"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/dangtin_tv_tentk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    />
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bạn đang nghĩ gì ?"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="25dp"/>
+                <Spinner
+                    android:id="@+id/dangtin_snp_chedo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+        <EditText
+            android:id="@+id/dangtin_edt_noidung"
+            android:hint="Cho tôi biết bạn đang nghĩ gì ?"
+            android:layout_marginTop="10dp"
+            android:gravity="top"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/stype_edt_bo4goc"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dangtin_rcv_hinhanh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/dangtin_btn_chonhinh"
+                    android:layout_width="wrap_content"
+                    android:text="Chọn Ảnh"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_image"
+                    />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_video"
+                    android:text="Video"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Gắn thẻ"
+                    android:drawableLeft="@drawable/ic_tag"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cảm xúc"
+                    android:drawableLeft="@drawable/ic_smile"/>
+            </LinearLayout>
+        </LinearLayout>
+        <Button
+            android:id="@+id/dangtin_btn_dangtin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="Đăng Bài Viết"
+            android:padding="5dp"
+            android:textColor="@color/white"
+            android:background="@drawable/stype_btn_dangnhap"/>
+    </LinearLayout>
+
+</ScrollView>

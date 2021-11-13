@@ -37,7 +37,7 @@ public class PhonebookAdapter extends RecyclerView.Adapter<PhonebookAdapter.View
     @Override
     public void onBindViewHolder(@NonNull @NotNull Viewhoder1 holder, int position) {
         User user = users.get(position);
-        holder.tv_tentk.setText(user.getTen());
+        holder.tv_tentk.setText(user.getFullName());
     }
 
     @Override

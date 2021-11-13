@@ -20,4 +20,7 @@
     <string name="mnhome_group">Nhóm</string>
     <string name="mnhome_pageaccout">Trang Cá Nhân</string>
     <string name="mnhome_menu">Menu</string>
+    <string name="dangky_edt_email">Email</string>
+    <string name="dangky_edt_ngaysinh">Ngày Sinh</string>
+    <string name="URLAPI">http://117.2.159.103:8082/</string>
 </resources>

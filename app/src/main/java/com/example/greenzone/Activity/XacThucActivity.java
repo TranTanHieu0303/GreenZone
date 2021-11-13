@@ -20,6 +20,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.greenzone.API.APIservice;
 import com.example.greenzone.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -34,6 +35,10 @@ import com.hbb20.CountryCodePicker;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.TimeUnit;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class XacThucActivity extends AppCompatActivity {
     Button btn_goima;
@@ -59,10 +64,32 @@ public class XacThucActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String sdt = cpp_code.getSelectedCountryCodeWithPlus()+edt_sdt.getText().toString().trim();
                 sendVerificationCode(sdt);
-
+//                if(checkphone(edt_sdt.getText().toString().trim())) {
+//                    String sdt = cpp_code.getSelectedCountryCodeWithPlus()+edt_sdt.getText().toString().trim();
+//                    sendVerificationCode(sdt);
+//                }
+//                else {
+//                    Toast.makeText(XacThucActivity.this, "Số điện thoại đã tồn tại", Toast.LENGTH_LONG).show();
+//                }
             }
         });
 
+    }
+
+    private boolean checkphone(String sdt) {
+        final Boolean[] kq = new Boolean[1];
+        APIservice.apiService.getCheckPhone(sdt).enqueue(new Callback<Boolean>() {
+            @Override
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                kq[0]=response.body();
+            }
+
+            @Override
+            public void onFailure(Call<Boolean> call, Throwable t) {
+                kq[0]= false;
+            }
+        });
+        return kq[0];
     }
 
     private void sendVerificationCode(String sdt) {

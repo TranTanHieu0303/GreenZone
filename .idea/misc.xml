@@ -5,25 +5,57 @@
       <map>
         <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/account_selector.xml" value="0.19054054054054054" />
         <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/banbe_select.xml" value="0.1" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/bg_count_chat.xml" value="0.19054054054054054" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/bg_toolbar_accout.xml" value="0.19054054054054054" />
         <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/chat_selector.xml" value="0.1" />
         <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/group_select.xml" value="0.1" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/home_selector.xml" value="0.1" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/ic_add.xml" value="0.19054054054054054" />
         <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/ic_call_24.xml" value="0.2203125" />
         <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/ic_call_phone.xml" value="0.2203125" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/ic_phonebook.xml" value="0.19054054054054054" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/ic_phonebooked.xml" value="0.19054054054054054" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/ic_search.xml" value="0.19054054054054054" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/ic_send_24.xml" value="0.19054054054054054" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/ic_videocam_24.xml" value="0.19054054054054054" />
         <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/menu_select.xml" value="0.1" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/sctrim.xml" value="0.1" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/sctrim_todown.xml" value="0.1" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/stype_bg_cmt.xml" value="0.19054054054054054" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/stype_bg_khungitembaidang.xml" value="0.19054054054054054" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/stype_bg_trongsuot_black.xml" value="0.1" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/stype_btn_login.xml" value="0.19054054054054054" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/stype_btn_mauvang.xml" value="0.1" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/drawable/stype_edt_bo4goc.xml" value="0.19054054054054054" />
         <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/activity_chat.xml" value="0.14" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/activity_chi_tiet_bai_viet.xml" value="0.17657657657657658" />
         <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/activity_cuoc_goi.xml" value="0.12894736842105264" />
-        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/activity_home.xml" value="0.12894736842105264" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/activity_dang_ky.xml" value="0.25" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/activity_dang_tin.xml" value="0.22" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/activity_group.xml" value="0.17657657657657658" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/activity_home.xml" value="0.23840206185567012" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/activity_main.xml" value="0.17657657657657658" />
         <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/activity_nhan_cuoc_goi.xml" value="0.12894736842105264" />
-        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/fragment_account.xml" value="0.12894736842105264" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/activity_xac_thuc.xml" value="0.33" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/fragment_account.xml" value="0.22" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/fragment_bookphone.xml" value="0.17657657657657658" />
         <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/fragment_chat.xml" value="0.1" />
-        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/fragment_home.xml" value="0.14" />
-        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/layout_dialog_xacthuc.xml" value="0.1" />
-        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/layout_item_baidang.xml" value="0.20416666666666666" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/fragment_group_page.xml" value="0.22" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/item_imege_select.xml" value="0.17657657657657658" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/layout_dialog_xacthuc.xml" value="0.2" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/layout_item_baidang.xml" value="0.4066543438077634" />
         <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/layout_item_canhan.xml" value="0.25" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/layout_item_comment.xml" value="0.17657657657657658" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/layout_item_dangbai.xml" value="0.33" />
         <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/layout_item_danhba.xml" value="0.12894736842105264" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/layout_item_group_page.xml" value="0.17926356589147288" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/layout_item_thongbao.xml" value="0.22" />
         <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/layout_itemgroup.xml" value="0.12894736842105264" />
         <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/layout_itemmess_goi.xml" value="0.1" />
         <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/layout_itemmess_nhan.xml" value="0.1" />
+        <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/layout/layout_rcv_group_page.xml" value="0.18" />
         <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/menu/menu_chat.xml" value="0.20416666666666666" />
         <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/menu/menu_chat_activity.xml" value="0.17657657657657658" />
         <entry key="..\:/KhoaLuanTotNghiep/App/GreenZone/app/src/main/res/menu/menu_chat_bottom.xml" value="0.17657657657657658" />

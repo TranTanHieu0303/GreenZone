@@ -46,7 +46,7 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     private void LoadChat() {
-        DatabaseReference datagroup = FirebaseDatabase.getInstance().getReference().child("Users").child(user.getSDT()).child("Groups");
+        DatabaseReference datagroup = FirebaseDatabase.getInstance().getReference().child("Users").child(user.getSdt()).child("Groups");
         datagroup.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull @NotNull DataSnapshot snapshot, @Nullable @org.jetbrains.annotations.Nullable String previousChildName) {

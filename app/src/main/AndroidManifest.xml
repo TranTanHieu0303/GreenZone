@@ -9,13 +9,26 @@
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo_2"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
-        android:theme="@style/Theme.GreenZone">
+        android:theme="@style/Theme.GreenZone"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".Activity.ChiTietBaiVietActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.SelectMediaFileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.DangTinActivity"
+            android:exported="true" />
         <activity
             android:name=".Activity.ChatActivity"
             android:exported="true" />
@@ -26,7 +39,8 @@
             android:name=".Activity.CuocGoiActivity"
             android:exported="true" />
         <activity android:name=".Activity.GroupActivity" />
-        <activity android:name=".Activity.HomeActivity" />
+        <activity android:name=".Activity.HomeActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".Activity.DangKyActivity" />
         <activity android:name=".Activity.XacThucActivity" />
         <activity android:name=".Activity.LoginActivity" />

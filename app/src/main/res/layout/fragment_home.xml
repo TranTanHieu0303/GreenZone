@@ -1,61 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:gravity="center">
-    <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="30dp"
-        android:layout_margin="5dp">
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@color/black"/>
-    </androidx.cardview.widget.CardView>
-    <EditText
-        android:layout_width="250dp"
-        android:layout_height="30dp"
-        android:background="@drawable/stype_edt_bo4goc"
-        android:text="@string/home_edt_trangthai"
-        android:paddingLeft="10dp"
-        android:layout_marginLeft="20dp"
-        />
-</LinearLayout>
-    <LinearLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            android:paddingLeft="60dp"
-            android:drawableLeft="@drawable/ic_image"
-            android:text="Đăng Ảnh"
-            android:gravity="center"
-            />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            android:drawableLeft="@drawable/ic_video"
-            android:text="Đăng Video"
-            android:gravity="center"
-            android:layout_gravity="center"
-            />
-    </LinearLayout>
+        android:id="@+id/home_appbar"
+        android:background="@color/white"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|enterAlways|snap">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/home_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:title="GreenZone"
+                android:background="@color/white"
+                app:layout_scrollFlags="scroll|enterAlways|snap"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fm_home_cv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/fm_home_cv_chat"
+                app:layout_constraintTop_toTopOf="parent"
+                app:cardCornerRadius="20dp">
+                <ImageView
+                    android:id="@+id/fm_Home_Search"
+                    android:layout_width="39dp"
+                    android:layout_height="39dp"
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/ic_search"
+                    app:layout_constraintEnd_toStartOf="@+id/fm_home_cv_chat"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="#e6e8ed"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fm_home_cv_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:cardCornerRadius="18dp"
+                >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:background="#e6e8ed">
+
+                <ImageView
+                    android:id="@+id/home_img_chat"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/chat_selector" />
+
+                <TextView
+                    android:id="@+id/fm_home_tv_coutchat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:background="@drawable/bg_count_chat"
+                    android:gravity="center"
+                    android:minWidth="13dp"
+                    android:minHeight="13dp"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:text="9+"
+                    android:textColor="@android:color/white"
+                    android:textSize="8dp"
+                    app:layout_constraintBottom_toTopOf="@id/home_img_chat"
+                    app:layout_constraintDimensionRatio="H,1:1"
+                    app:layout_constraintRight_toRightOf="@id/home_img_chat"
+                    app:layout_constraintTop_toTopOf="@id/home_img_chat" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+<!--    <LinearLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="horizontal"-->
+<!--    android:gravity="center">-->
+<!--        <de.hdodenhof.circleimageview.CircleImageView-->
+<!--            android:id="@+id/fmhome_img_avatar"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            app:civ_border_color="@color/black"/>-->
+<!--    <EditText-->
+<!--        android:id="@+id/fmhome_edt_noidung"-->
+<!--        android:layout_width="250dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:background="@drawable/stype_edt_bo4goc"-->
+<!--        android:hint="@string/home_edt_trangthai"-->
+<!--        android:paddingLeft="10dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+
+<!--        />-->
+<!--</LinearLayout>-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:gravity="center">-->
+<!--        <TextView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:paddingLeft="60dp"-->
+<!--            android:drawableLeft="@drawable/ic_image"-->
+<!--            android:text="Đăng Ảnh"-->
+<!--            android:gravity="center"-->
+<!--            />-->
+<!--        <TextView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:drawableLeft="@drawable/ic_video"-->
+<!--            android:text="Đăng Video"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_gravity="center"-->
+<!--            />-->
+<!--    </LinearLayout>-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/frag_home_rcv_baidang"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/layout_item_baidang"/>
-</LinearLayout>
+        tools:listitem="@layout/layout_item_baidang"
+        android:background="@color/bg_home"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

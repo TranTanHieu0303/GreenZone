@@ -12,14 +12,15 @@
         android:id="@+id/xucthuc_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#10e062"
+        android:background="@color/cl_toobar"
         app:title="@string/title_dangky"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/tv_xacthuc_tieude"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:padding="10dp"/>
     <LinearLayout
@@ -40,11 +41,12 @@
 
             <com.hbb20.CountryCodePicker
                 android:id="@+id/xacthuc_ccp_code"
-                android:layout_width="0dp"
+                android:layout_width="10dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:background="@drawable/stype_boleft"
                 app:ccp_defaultNameCode="VN"
+                app:ccp_textSize="10dp"
                 android:gravity="center"/>
 
             <EditText
@@ -57,7 +59,7 @@
                 android:padding="10dp"
                 android:inputType="phone"
                 android:maxLines="1"
-                android:textSize="20dp" />
+                android:textSize="15dp" />
         </LinearLayout>
         <Button
             android:id="@+id/xacthuc_btn_goima"

@@ -6,6 +6,7 @@
         android:icon="@drawable/ic_search"
         android:title="Tìm Kiếm"
         app:showAsAction="always"
+
         />
     <item
         android:id="@+id/mn_home_chat"

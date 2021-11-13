@@ -1,21 +1,29 @@
 package com.example.greenzone.Class;
 
-public class BaiViet {
-    String idBaiViet,idUser,NoiDung,HinhAnh,Video,CheDO,Luotlike,Luotcomment,LuotShare;
+import com.google.type.DateTime;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+public class BaiViet implements Serializable {
+    String idBaiViet,idUser,noidung,hinhAnh,video,cheDo;
+    Integer luotLike,luotComment,luotShare;
+    String ngayDang;
 
     public BaiViet() {
     }
 
-    public BaiViet(String idBaiViet, String idUser, String noiDung, String hinhAnh, String video, String cheDO, String luotlike, String luotcomment, String luotShare) {
+    public BaiViet(String idBaiViet, String idUser, String noidung, String hinhAnh, String video, String cheDo, Integer luotLike, Integer luotComment, Integer luotShare, String ngayDang) {
         this.idBaiViet = idBaiViet;
         this.idUser = idUser;
-        NoiDung = noiDung;
-        HinhAnh = hinhAnh;
-        Video = video;
-        CheDO = cheDO;
-        Luotlike = luotlike;
-        Luotcomment = luotcomment;
-        LuotShare = luotShare;
+        this.noidung = noidung;
+        this.hinhAnh = hinhAnh;
+        this.video = video;
+        this.cheDo = cheDo;
+        this.luotLike = luotLike;
+        this.luotComment = luotComment;
+        this.luotShare = luotShare;
+        this.ngayDang = ngayDang;
     }
 
     public String getIdBaiViet() {
@@ -34,59 +42,67 @@ public class BaiViet {
         this.idUser = idUser;
     }
 
-    public String getNoiDung() {
-        return NoiDung;
+    public String getNoidung() {
+        return noidung;
     }
 
-    public void setNoiDung(String noiDung) {
-        NoiDung = noiDung;
+    public void setNoidung(String noidung) {
+        this.noidung = noidung;
     }
 
     public String getHinhAnh() {
-        return HinhAnh;
+        return hinhAnh;
     }
 
     public void setHinhAnh(String hinhAnh) {
-        HinhAnh = hinhAnh;
+        this.hinhAnh = hinhAnh;
     }
 
     public String getVideo() {
-        return Video;
+        return video;
     }
 
     public void setVideo(String video) {
-        Video = video;
+        this.video = video;
     }
 
-    public String getCheDO() {
-        return CheDO;
+    public String getCheDo() {
+        return cheDo;
     }
 
-    public void setCheDO(String cheDO) {
-        CheDO = cheDO;
+    public void setCheDo(String cheDo) {
+        this.cheDo = cheDo;
     }
 
-    public String getLuotlike() {
-        return Luotlike;
+    public Integer getLuotLike() {
+        return luotLike;
     }
 
-    public void setLuotlike(String luotlike) {
-        Luotlike = luotlike;
+    public void setLuotLike(Integer luotLike) {
+        this.luotLike = luotLike;
     }
 
-    public String getLuotcomment() {
-        return Luotcomment;
+    public Integer getLuotComment() {
+        return luotComment;
     }
 
-    public void setLuotcomment(String luotcomment) {
-        Luotcomment = luotcomment;
+    public void setLuotComment(Integer luotComment) {
+        this.luotComment = luotComment;
     }
 
-    public String getLuotShare() {
-        return LuotShare;
+    public Integer getLuotShare() {
+        return luotShare;
     }
 
-    public void setLuotShare(String luotShare) {
-        LuotShare = luotShare;
+    public void setLuotShare(Integer luotShare) {
+        this.luotShare = luotShare;
+    }
+
+    public String getNgayDang() {
+        return ngayDang;
+    }
+
+    public void setNgayDang(String ngayDang) {
+        this.ngayDang = ngayDang;
     }
 }

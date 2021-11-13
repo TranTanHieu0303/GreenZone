@@ -10,7 +10,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.greenzone.API.APIservice;
 import com.example.greenzone.Class.User;
 import com.example.greenzone.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,8 +23,12 @@ import java.security.NoSuchAlgorithmException;
 
 import javax.xml.bind.DatatypeConverter;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class DangKyActivity extends AppCompatActivity {
-    EditText edt_sdt,edt_ho,edt_ten,edt_matkhau,edt_xacnhanmk;
+    EditText edt_sdt,edt_ho,edt_ten,edt_email,edt_ngaysinh,edt_matkhau,edt_xacnhanmk;
     Button btn_thoat,btn_dangky;
     FirebaseAuth firebaseAuth;
     Toolbar toolbar;
@@ -35,6 +41,8 @@ public class DangKyActivity extends AppCompatActivity {
         edt_sdt = findViewById(R.id.dangky_edt_sdt);
         edt_ho = findViewById(R.id.dangky_edt_ho);
         edt_ten = findViewById(R.id.dangky_edt_ten);
+        edt_email = findViewById(R.id.dangky_edt_email);
+        edt_ngaysinh = findViewById(R.id.dangky_edt_ngaysinh);
         edt_matkhau = findViewById(R.id.dangky_edt_matkhau);
         edt_xacnhanmk = findViewById(R.id.dangky_edt_nhaplaimk);
         btn_thoat = findViewById(R.id.dangky_btn_thoat);
@@ -61,13 +69,32 @@ public class DangKyActivity extends AppCompatActivity {
     }
     private void DangKy() {
         User user = new User();
-        user.setSDT(edt_sdt.getText().toString().trim());
-        user.setHo(edt_ho.getText().toString().trim());
-        user.setTen(edt_ten.getText().toString().trim());
-        String password = edt_matkhau.getText().toString().trim();;
-        user.setPassword(mahoapass(password));
-        FirebaseDatabase.getInstance().getReference().child("Users").child(System.currentTimeMillis()+"").setValue(user);
+        String sdt = edt_sdt.getText().toString().trim();
+        user.setSdt(sdt);
+        user.setFullName(edt_ho.getText().toString().trim()+" "+edt_ten.getText().toString().trim());
+        user.setSoBanBe(0);
+        user.setHinhAnh("user.png");
+        user.setEmail(edt_email.getText().toString().trim());
+        user.setNgaySinh(edt_ngaysinh.getText().toString().trim());
+        user.setOnline(true);
+        String password = edt_matkhau.getText().toString().trim();
+        user.setPassword(password);
+        APIservice.apiService.postUser(user).enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                Toast.makeText(DangKyActivity.this,"post thanh cong",Toast.LENGTH_SHORT).show();
+                User user1 = response.body();
+                FirebaseDatabase.getInstance().getReference().child("Users").child(user1.getIdUser()).setValue(user1);
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                Toast.makeText(DangKyActivity.this,"post không thành công",Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
+
     public String mahoapass(String password)
     {
         MessageDigest md = null;

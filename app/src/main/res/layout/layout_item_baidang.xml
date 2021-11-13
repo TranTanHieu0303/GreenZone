@@ -1,112 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/it_baidang_layuottong"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_marginTop="5dp">
+    android:background="@color/bg_home"
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="30dp"
-            android:layout_margin="10dp">
-            <ImageView
-                android:id="@+id/it_baidang_img_avatar"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@color/black"
-                />
-        </androidx.cardview.widget.CardView>
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:background="@drawable/stype_bg_khungitembaidang">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/it_baidang_tv_tentk"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/it_baidang_img_avatar"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:civ_border_color="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/it_baidang_img_avatar_phu"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:civ_border_color="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Trần Tấn Hiếu"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:layout_marginTop="10dp"
-                />
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/it_baidang_tv_tengroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_marginTop="10dp"
+                        />
+                    <TextView
+                        android:id="@+id/it_baidang_tv_tentk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/it_baidang_img_chedo"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:src="@drawable/ic_cong_khai"/>
+                    <TextView
+                        android:paddingLeft="10dp"
+                        android:id="@+id/it_baidang_tv_thoigian"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="21/08/2000 lúc 20:23"
+                        android:textStyle="bold"
+                        android:textSize="10dp"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
             <TextView
-                android:id="@+id/it_baidang_tv_thoigian"
+                android:id="@+id/it_baidang_tv_noidung"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="21/08/2000 lúc 20:23"
-                android:textStyle="bold"
-                android:textSize="10dp"
-                />
+                android:minWidth="400dp"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/it_baidang_tv_xemthem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom|right"
+                android:text="Xem Thêm"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/it_baidang_tv_noidung"
+                app:layout_constraintEnd_toEndOf="@+id/it_baidang_tv_noidung" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/it_baidang_rcv_hinhanh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/it_baidang_tv_luotlike"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_likemau"
+                android:text="100"
+                android:paddingLeft="10dp"
+                android:drawablePadding="5dp"/>
+            <TextView
+                android:id="@+id/it_baidang_tv_luotcmt_share"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="100 bình luận , 20 lượt chia sẽ"
+                android:paddingLeft="10dp"
+                android:drawablePadding="5dp"
+                android:textAlignment="textEnd"
+                android:paddingRight="10dp"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#828282"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:id="@+id/it_baidang_tv_like"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_like"
+                android:text="Thích"
+                android:paddingLeft="10dp"
+                android:drawablePadding="5dp"/>
+            <TextView
+                android:id="@+id/it_baidang_tv_cmt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_cmt"
+                android:text="Bình luận"
+                android:paddingLeft="10dp"
+                android:drawablePadding="5dp"/>
+            <TextView
+                android:id="@+id/it_baidang_tv_share"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_share"
+                android:text="Chia sẽ"
+                android:paddingLeft="10dp"
+                android:drawablePadding="5dp"/>
         </LinearLayout>
     </LinearLayout>
-    <TextView
-        android:id="@+id/it_baidang_tv_noidung"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nội dung bài đăng được hiển thị ở đây"
-        android:padding="10dp"/>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/it_baidang_rcv_hinhanh"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/it_baidang_tv_luotlike"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:drawableLeft="@drawable/ic_likemau"
-            android:text="100"
-            android:paddingLeft="10dp"
-            android:drawablePadding="5dp"/>
-        <TextView
-            android:id="@+id/it_baidang_tv_luotcmt_share"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="100 bình luận , 20 lượt chia sẽ"
-            android:paddingLeft="10dp"
-            android:drawablePadding="5dp"
-            android:textAlignment="textEnd"
-            android:paddingRight="10dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/it_baidang_tv_like"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:drawableLeft="@drawable/ic_like"
-            android:text="Thích"
-            android:paddingLeft="10dp"
-            android:drawablePadding="5dp"/>
-        <TextView
-            android:id="@+id/it_baidang_tv_cmt"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:drawableLeft="@drawable/ic_cmt"
-            android:text="Bình luận"
-            android:paddingLeft="10dp"
-            android:drawablePadding="5dp"/>
-        <TextView
-            android:id="@+id/it_baidang_tv_share"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:drawableLeft="@drawable/ic_share"
-            android:text="Chia sẽ"
-            android:paddingLeft="10dp"
-            android:drawablePadding="5dp"/>
-    </LinearLayout>
+
 </LinearLayout>
